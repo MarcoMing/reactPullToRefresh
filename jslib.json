@@ -1,0 +1,11 @@
+{
+    "name": "mylib",
+    "npmname": "mylib",
+    "umdname": "mylib",
+    "username": "MarcoMing",
+    "type": "js",
+    "module": "umd,esm,commonjs",
+    "test": "mocha",
+    "lang": "en",
+    "version": "1.5.1"
+}
