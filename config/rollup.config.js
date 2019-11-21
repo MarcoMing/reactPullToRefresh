@@ -1,6 +1,8 @@
 // rollup.config.js
 // commonjs
+import postcss from 'rollup-plugin-postcss';
 var common = require('./rollup.js');
+
 
 module.exports = {
     input: 'src/index.js',
@@ -11,7 +13,14 @@ module.exports = {
         // legacy: true,
         banner: common.banner,
     },
+    external: ['react', 'react-dom'],
+    globals: ['react', 'react-dom'],
     plugins: [
+        postcss({
+            //modules: true,
+            extract: true,
+            extensions: ['.scss']
+        }),
         common.getCompiler()
     ]
 };

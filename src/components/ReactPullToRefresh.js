@@ -10,16 +10,16 @@ class ReactPullToRefresh extends React.Component{
     this.element = React.createRef();
     this.layer = React.createRef();
     this.view = React.createRef();
-    this.init = this.init.bind(this);
+    this.addEventListener = this.addEventListener.bind(this);
   }
 
   componentDidMount(){
     if(!this.props.disabled){
-      this.init();
+      this.addEventListener();
     }
   }
 
-  init(){
+  addEventListener(){
     //mobile
     this.element.current.addEventListener('touchstart', touchStart, false);
     this.element.current.addEventListener('touchmove', touchMove, false);
@@ -112,7 +112,11 @@ class ReactPullToRefresh extends React.Component{
       <div ref={this.element} className={`drop-down-refresh-wrapper ${className}`}  { ...rest} >
         <div className="drop-down-refresh-layer" ref={this.layer}>
             <div className="refresh-pull-arrow"></div>
-            <div className="refresh-pull-loading">loading...</div>
+            <div className="refresh-pull-loading">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
         </div>
         <div className="drop-down-refresh-view" ref={this.view}>
           {

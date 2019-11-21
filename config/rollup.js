@@ -4,12 +4,12 @@ var pkg = require('../package.json');
 
 var version = pkg.version;
 
-var banner = 
+var banner =
 `/*!
- * ${pkg.name} ${version} (https://github.com/MarcoMing/mylib)
- * API https://github.com/MarcoMing/mylib/blob/master/doc/api.md
+ * ${pkg.name} ${version} (https://github.com/MarcoMing/reactPullToRefresh)
+ * API https://github.com/MarcoMing/reactPullToRefresh/blob/master/doc/api.md
  * Copyright 2017-${(new Date).getFullYear()} MarcoMing. All Rights Reserved
- * Licensed under MIT (https://github.com/MarcoMing/mylib/blob/master/LICENSE)
+ * Licensed under MIT (https://github.com/MarcoMing/reactPullToRefresh/blob/master/LICENSE)
  */
 `;
 
@@ -27,7 +27,8 @@ function getCompiler(opt) {
                     'modules': false,
                     'loose': false
                 }
-            ]
+            ],
+            "@babel/preset-react"
         ],
         plugins: [
             [
@@ -43,6 +44,6 @@ function getCompiler(opt) {
     });
 }
 
-exports.name = 'mylib';
+exports.name = 'reactPullToRefresh';
 exports.banner = banner;
 exports.getCompiler = getCompiler;
